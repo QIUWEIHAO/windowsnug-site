@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Window Snug — Keyboard window tiling for macOS</title>
+<meta name="description" content="Snap any window into halves, thirds, quarters or full screen with a keystroke. A free, modern take on Spectacle for macOS.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #14161c;
+    --muted: #5b6172;
+    --line: #e6e8ee;
+    --accent: #3f5bd9;
+    --card: #f7f8fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1116;
+      --fg: #eef0f6;
+      --muted: #9aa1b4;
+      --line: #232734;
+      --accent: #8aa2ff;
+      --card: #171a22;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 88px 0 56px; text-align: center; }
+  .mark {
+    width: 84px; height: 84px; margin: 0 auto 24px; border-radius: 20px;
+    background: linear-gradient(150deg, #6b4ef2, #3390fa);
+    display: grid; place-items: center;
+    box-shadow: 0 10px 30px rgba(60, 80, 200, .28);
+  }
+  .mark svg { display: block; }
+  h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 12px; }
+  .tag { font-size: 19px; color: var(--muted); margin: 0 auto; max-width: 30ch; }
+  .cta { margin-top: 28px; }
+  .btn {
+    display: inline-block; padding: 11px 22px; border-radius: 999px;
+    background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px;
+  }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--line); }
+  .shots { display: grid; gap: 14px; margin: 8px 0 56px; }
+  .shots img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
+  h2 { font-size: 22px; letter-spacing: -0.01em; margin: 48px 0 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:last-child { text-align: right; white-space: nowrap; color: var(--muted); font-feature-settings: "tnum"; }
+  .note { background: var(--card); border-radius: 12px; padding: 18px 20px; color: var(--muted); font-size: 15.5px; }
+  footer { margin: 72px 0 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px; display: flex; gap: 18px; flex-wrap: wrap; }
+  footer a { color: var(--muted); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark" aria-hidden="true">
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+        <rect x="4" y="8" width="16" height="30" rx="4" fill="#fff" fill-opacity="0.95"/>
+        <rect x="26" y="8" width="16" height="30" rx="4" fill="#fff" fill-opacity="0.95"/>
+        <rect x="20.5" y="20" width="5" height="6" rx="2.5" fill="#fff" fill-opacity="0.95"/>
+      </svg>
+    </div>
+    <h1>Window Snug</h1>
+    <p class="tag">Windows that fit just right. Halves, thirds, corners — one keystroke, no mouse.</p>
+    <p class="cta">
+      <a class="btn" href="https://apps.apple.com/app/id6802123770">Get it on the Mac App Store</a>
+    </p>
+    <p style="color:var(--muted);font-size:14.5px;margin-top:10px">Free · macOS 13 or later</p>
+  </header>
+
+  <h2>Shortcuts</h2>
+  <table>
+    <tr><td>Left / Right / Top / Bottom half<br><span style="color:var(--muted);font-size:14px">Press again to cycle ½ → ⅔ → ⅓</span></td><td>⌥⌘ ← → ↑ ↓</td></tr>
+    <tr><td>Upper left / Upper right</td><td>⌃⌘ ← →</td></tr>
+    <tr><td>Lower left / Lower right</td><td>⌃⇧⌘ ← →</td></tr>
+    <tr><td>Center / Fullscreen</td><td>⌥⌘C · ⌥⌘F</td></tr>
+    <tr><td>Next / Previous display</td><td>⌃⌥⌘ → ←</td></tr>
+    <tr><td>Next / Previous third</td><td>⌃⌥ → ←</td></tr>
+    <tr><td>Make larger / smaller</td><td>⌃⌥⇧ → ←</td></tr>
+    <tr><td>Undo / Redo</td><td>⌥⌘Z · ⌥⇧⌘Z</td></tr>
+  </table>
+  <p style="color:var(--muted);font-size:15px">Every shortcut is customizable in Settings — click a field and press the combination you want.</p>
+
+  <h2>Accessibility permission</h2>
+  <p class="note">
+    macOS only lets an app move another app's windows if you grant Accessibility access.
+    On first launch Window Snug asks for it and opens the right settings pane for you:
+    <strong>System Settings › Privacy &amp; Security › Accessibility</strong>. Turn Window Snug on and you're set.
+  </p>
+
+  <h2>Privacy</h2>
+  <p>Window Snug collects nothing. No accounts, no analytics, no network requests. Your shortcut preferences stay on your Mac.
+    <a href="privacy.html">Read the privacy policy</a>.</p>
+
+  <h2>Support</h2>
+  <p>Found a bug or want a layout that isn't there? Open an issue on
+    <a href="https://github.com/QIUWEIHAO/WindowSnug/issues">GitHub</a>, or email
+    <a href="mailto:qiu0717@gmail.com">qiu0717@gmail.com</a>.</p>
+
+  <footer>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/QIUWEIHAO/WindowSnug/issues">Support</a>
+    <span>© 2026 Weihao Qiu</span>
+  </footer>
+
+</div>
+</body>
+</html>
